@@ -22,13 +22,15 @@ jobs:
       - name: Replace placeholder in backend.tf
         run: |
           sed -i "s/{{REPO_NAME}}/${REPO_NAME}/g" backend.tf
+          sed -i "s/{{REPO_NAME}}/${REPO_NAME}/g" variables.tf
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add backend.tf
-          git commit -m "Update backend.tf with repo name"
+          git add variables.tf
+          git commit -m "Update tf files with repo name"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

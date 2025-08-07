@@ -10,8 +10,8 @@ variable "type" {
  default     = "t2.nano"
 }
 
-variable "suffix" {
+variable "repo_name" {
  type        = string
  description = "Unique identifier for a each student session and workspace"
- default     = "2672"
+ default     = "{{REPO_NAME}}"
 } 
