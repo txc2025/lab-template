@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   update-backend:
-    if: github.repository != 'txc2025/lab-template'
+    if: github.repository != 'txc2025/lab-template' && github.event.before == '0000000000000000000000000000000000000000'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
